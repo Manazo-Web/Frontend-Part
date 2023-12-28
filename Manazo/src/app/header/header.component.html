@@ -1,0 +1,117 @@
+
+  <div class="offcanvas offcanvas-start text-bg-dark" tabindex="-1" id="offcanvasDarkNavbar"
+    aria-labelledby="offcanvasDarkNavbarLabel">
+    <div class="offcanvas-header">
+      <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel">Темный offcanvas</h5>
+      <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body">
+      <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#">Главная</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Ссылка</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Выпадающий список
+          </a>
+          <ul class="dropdown-menu dropdown-menu-dark">
+            <li><a class="dropdown-item" href="#">Действие</a></li>
+            <li><a class="dropdown-item" href="#">Другое действие</a></li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+            <li><a class="dropdown-item" href="#">Что-то еще здесь</a></li>
+          </ul>
+        </li>
+      </ul>
+      <form class="d-flex mt-3" role="search">
+        <input class="form-control me-2" type="search" placeholder="Поиск" aria-label="Поиск">
+        <button class="btn btn-success" type="submit">Поиск</button>
+      </form>
+    </div>
+  </div>
+
+
+
+<!-- Модальное окно -->
+<div class="modal fade bg-dark" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content ">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5 " id="staticBackdropLabel">Регистрация</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрыть"></button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="mb-3">
+            <label for="inputName" class="form-label">Имя</label>
+            <input type="text" class="form-control" id="inputName" >
+           
+          </div>
+          <div class="mb-3">
+            <label for="inputSurname" class="form-label">Фамилия</label>
+            <input type="text" class="form-control" id="inputSurname" >
+           
+          </div>
+          <div class="mb-3">
+            <label for="inputPhone" class="form-label">Телефон</label>
+            <input type="number" class="form-control" id="inputPhone" >
+           
+          </div>
+          <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Адрес электронной почты</label>
+            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+          </div>
+          <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">Пароль</label>
+            <input type="password" class="form-control" id="exampleInputPassword1">
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Закрыть</button>
+        <button (click)="RegClick()" type="button" class="btn btn-primary">Зарегестрироваться</button>
+      </div>
+    </div>
+  </div>
+</div>
+  
+  <nav class="navbar navbar-dark bg-dark ">
+    <div class="container-fluid">
+
+      <div class="container">
+
+        <div class="test">
+          <div class="d-flex">
+            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas"
+              data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar" style="margin: 5px;">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
+              <img class="logo-img-header" src="/assets/layaut_logo.png">
+            </a>
+          </div>
+
+          <div class="test">
+            <form class="d-flex" role="search" >
+              <input class="form-control me-2" type="search" placeholder="Поиск" aria-label="Поиск">
+              <button id="button-search" class="btn btn-light" type="submit">Поиск</button>
+            </form>
+          </div>
+          <div class="d-flex align-items-center align-content-center justify-content-space-around ">
+            
+            <div class="text-end ">
+              <button id="login-button" type="button" class="btn btn-warning"
+                style="margin: 5px;">Login</button>
+ 
+              <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Sign-up</button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </nav>

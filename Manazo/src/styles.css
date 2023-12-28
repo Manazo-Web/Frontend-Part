@@ -1,12 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 @import '~bootstrap/dist/css/bootstrap.min.css';
 
-.test{
-    display:flex;
-    align-items:center;
-     align-content:center;
-    justify-content:space-between; 
-}
+
 .logo-img-header{
 width:130px;
 height:40px;
