@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
+import { NgModel } from '@angular/forms';
+
 
 @Component({
   selector: 'app-header',
@@ -7,9 +8,22 @@ import { Router } from '@angular/router';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent {
-  constructor(private router: Router) {}
+  LogLogin:string = '';
+  LogPassword:string = '';
+
+  RegName:string = '';
+  RegSurname:string = '';
+  RegNumber:number = 0;
+  RegEmail:string = '';
+  RegLogin:string = '';
+  RegPassword:string = '';
+
+  LogClick(){
+    console.log(this.LogLogin + " " + this.LogPassword);
+  }
   RegClick(){
     //тут делай шо хош
+    console.log(this.RegLogin + "\n" +this.RegEmail + "\n" +this.RegName + "\n" +this.RegNumber + "\n" + this.RegPassword + "\n" + this.RegSurname);
   }
   
 }
