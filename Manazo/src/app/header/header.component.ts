@@ -27,11 +27,34 @@ export class HeaderComponent {
   LogClick(){
     console.log(this.LogLogin + " " + this.LogPassword);
   }
-  RegClick(){
-    //тут делай шо хош
-    console.log(this.RegLogin + "\n" +this.RegEmail + "\n" +this.RegName + "\n" +this.RegNumber + "\n" + this.RegPassword + "\n" + this.RegSurname);
-  }
+RegClick() {
+    const url = 'тут будет ссылка';
 
+    const data = {
+        RegLogin: this.RegLogin,
+        RegEmail: this.RegEmail,
+        RegName: this.RegName,
+        RegNumber: this.RegNumber,
+        RegPassword: this.RegPassword,
+        RegSurname: this.RegSurname
+    };
+
+    fetch(url, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+    })
+    .then(response => response.json())
+    .then(responseData => {
+        // Display the response data in the console
+        console.log(responseData);
+    })
+    .catch(error => {
+        console.error('Error:', error);
+    });
+}
 
   sendSearchString() {
     this.searchService.updateSearchString(this.searchString);
