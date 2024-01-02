@@ -118,7 +118,7 @@
 
       <div class="container">
 
-        <div class="test">
+        <div class="d-flex justify-content-between align-items-center">
           <div class="d-flex">
             <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas"
               data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar" style="margin: 5px;">
@@ -129,10 +129,10 @@
             </a>
           </div>
 
-          <div class="test">
+          <div class="d-flex justify-content-between align-items-center">
             <form class="d-flex" role="search" >
-              <input class="form-control me-2" type="search" placeholder="Поиск" aria-label="Поиск">
-              <button id="button-search" class="btn btn-light" type="submit">Поиск</button>
+              <input [(ngModel)]="searchString" name="search" class="form-control me-2" type="search" placeholder="Поиск" aria-label="Поиск">
+              <button (click)="sendSearchString()" id="button-search" class="btn btn-light" type="submit">Поиск</button>
             </form>
           </div>
           <div class="d-flex align-items-center align-content-center justify-content-space-around ">
