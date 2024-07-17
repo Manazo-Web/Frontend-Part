@@ -37,19 +37,17 @@
 
 <!-- Модальное окно LOGIN-->
 <div class="modal fade" id="login" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content ">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
       <div class="modal-header">
-        <h1 class="modal-title fs-5 " id="staticBackdropLabel">Вход</h1>
+        <h1 class="modal-title fs-5 text-center" id="staticBackdropLabel">Вход</h1>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрыть"></button>
       </div>
       <div class="modal-body">
         <form>
-         
           <div class="mb-3">
             <label for="inputLogin" class="form-label">Введите логин</label>
-            <input [(ngModel)]="LogLogin" name="LogLogin" type="text" class="form-control" id="inputLogin" >
-           
+            <input [(ngModel)]="LogLogin" name="LogLogin" type="text" class="form-control" id="inputLogin">
           </div>
           <div class="mb-3">
             <label for="passLogin" class="form-label">Введите пароль</label>
@@ -57,14 +55,12 @@
           </div>
         </form>
       </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Закрыть</button>
-        <button (click)="LogClick()" type="button" class="btn btn-primary">Войти</button>
+      <div class="modal-footer justify-content-center">
+        <button type="button" class="btn btn-dark" data-bs-dismiss="modal">Войти</button>
       </div>
     </div>
   </div>
 </div>
-  
 
 <!-- Модальное окно REGISTER -->
 <div class="modal fade bg-dark" id="register" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
@@ -88,26 +84,46 @@
           </div>
           <div class="mb-3">
             <label for="inputPhone" class="form-label">Телефон</label>
-            <input [(ngModel)]="RegNumber" name="RegNumber" type="number" class="form-control" id="inputPhone" >
+            <input [(ngModel)]="RegNumber" name="RegNumber" type="tel" class="form-control" id="inputPhone" >
            
           </div>
           <div class="mb-3">
-            <label for="exampleInputEmail1" class="form-label">Адрес электронной почты</label>
-            <input [(ngModel)]="RegEmail" name="RegEmail" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+            <label for="InputEmail" class="form-label">Адрес электронной почты</label>
+            <input [(ngModel)]="RegEmail" name="RegEmail" type="email" class="form-control" id="InputEmail" aria-describedby="emailHelp">
           </div>
           <div class="mb-3">
-            <label for="inputLoginReg" class="form-label">Придумайте логин</label>
+            <label for="inputLoginReg" class="form-label">Логин</label>
             <input [(ngModel)]="RegLogin" name="RegLogin" type="text" class="form-control" id="inputLoginReg">
           </div>
           <div class="mb-3">
             <label for="inputPassword" class="form-label">Пароль</label>
             <input [(ngModel)]="RegPassword" name="RegPassword" type="password" class="form-control" id="inputPassword">
           </div>
+          <div class="mb-3">
+            <label for="InputCountry" class="form-label">Страна</label>
+            <input [(ngModel)]="RegCountry" name="RegCountry" type="text" class="form-control" id="InputCountry" >
+          </div>
+          <div class="mb-3">
+            <label for="InputCity" class="form-label">Город</label>
+            <input [(ngModel)]="RegCity" name="RegCity" type="text" class="form-control" id="InputCity" >
+          </div>
+          <div class="mb-3">
+            <label for="InputStreet" class="form-label">Улица</label>
+            <input [(ngModel)]="RegStreet" name="RegStreet" type="text" class="form-control" id="InputStreet" >
+          </div>
+          <div class="mb-3">
+            <label for="InputHome" class="form-label">Дом</label>
+            <input [(ngModel)]="RegZipcode" name="RegZipcode" type="text" class="form-control" id="InputHome" >
+          </div>
+          <div class="mb-3">
+            <label for="InputCard" class="form-label">Банковская карточка</label>
+            <input [(ngModel)]="RegCreditCard" name="RegCard" type="text" class="form-control" id="InputCard" >
+          </div>
         </form>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Закрыть</button>
-        <button (click)="RegClick()" type="button" class="btn btn-primary">Зарегестрироваться</button>
+        <button type="button" class="btn btn-dark" data-bs-dismiss="modal">Закрыть</button>
+        <button (click)="RegClick()" type="button" class="btn btn-dark">Зарегестрироваться</button>
       </div>
     </div>
   </div>
@@ -119,33 +135,50 @@
       <div class="container">
 
         <div class="d-flex justify-content-between align-items-center">
+          
           <div class="d-flex">
-            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas"
-              data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar" style="margin: 5px;">
-              <span class="navbar-toggler-icon"></span>
-            </button>
+            <div class="container">
+              <button class="navbar-toggler " type="button" data-bs-toggle="offcanvas"
+                data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar" style="margin: 5px;">
+                  <i class="bi bi-list"></i>
+              </button>
+            </div>
             <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
               <img class="logo-img-header" src="/assets/layaut_logo.png">
             </a>
           </div>
-
           <div class="d-flex justify-content-between align-items-center">
             <form class="d-flex" role="search" >
-              <input [(ngModel)]="searchString" name="search" class="form-control me-2" type="search" placeholder="Поиск" aria-label="Поиск">
-              <button (click)="sendSearchString()" id="button-search" class="btn btn-light" type="submit">Поиск</button>
+              <input [(ngModel)]="searchString" name="search" class="search-input form-control me-2 bg-dark text-white" type="search" placeholder="Введите для поиска" aria-label="Поиск">
+              <button (click)="sendSearchString()" id="button-search" class="btn btn-outline-light border-button" type="submit">Поиск</button>
             </form>
           </div>
           <div class="d-flex align-items-center align-content-center justify-content-space-around ">
-            
+  
             <div class="text-end ">
-              <button id="login-button" type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#login"
-                style="margin: 5px;">Login</button>
- 
-              <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#register">Sign-up</button>
+              <button id="login-button" type="button" class="btn btn-outline-light border-button" data-bs-toggle="modal" data-bs-target="#login" style="margin: 4px;">Вход</button>
+              <button type="button" class="btn btn-outline-light border-button" data-bs-toggle="modal" data-bs-target="#register" style="margin: 4px;">Регистрация</button>
             </div>
+            
+            <button type="button" (click)="cartClick()" class="btn btn-outline-light border-button" style="margin: 4px;">
+              <i class="bi bi-cart3"></i>
+            </button>
+            
+            <button type="button" (click)="favoritesClick()" class="btn btn-outline-light border-button" style="margin: 4px;">
+              <i class="bi bi-heart"></i>
+            </button>
+            
+            <button type="button" class="btn btn-outline-light border-button" style="margin: 4px;">
+              <i class="bi bi-box-arrow-left"></i>
+            </button>
+            
+            <button type="button" (click)="userClick()" class="btn btn-outline-light border-button" style="margin: 4px;">
+              <i class="bi bi-person"></i>
+            </button>
+            
           </div>
-
         </div>
       </div>
     </div>
   </nav>
+  

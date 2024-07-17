@@ -20,85 +20,20 @@
     </button>
 </div>
   
-<div class="ttt ">
-    <div class="card" style="width: 20rem;">
-                
-        <div class="card-body">
-            <h5 class="card-title">Заголовок карточки</h5>
+<div class="ttt">
+  <div class="container my-4">
+    <div class="row">
+      <div class="col-md-4 mb-4" *ngFor="let card of cards">
+        <div class="card h-100 shadow-sm">
+          <div class="card-header bg-dark text-white text-center">
+            <h5 class="mb-0">{{card.title}}</h5>
+          </div>
+          <img src="{{card.img}}" class="card-img-top" alt="Card image">
+          <div class="card-body">
+            <a href="{{card.link}}" class="btn btn-dark w-100">Ссылка карточки</a>
+          </div>
         </div>
-        <img src="/assets/icon-1.png" class="card-img-top" alt="...">
-        <div class="card-body">
-            <a href="#" class="card-link">Ссылка карточки</a>
-        </div>
+      </div>
     </div>
-    <div class="card" style="width: 20rem;">
-                
-        <div class="card-body">
-            <h5 class="card-title">Заголовок карточки</h5>
-        </div>
-        <img src="/assets/icon-1.png" class="card-img-top" alt="...">
-        <div class="card-body">
-            <a href="#" class="card-link">Ссылка карточки</a>
-        </div>
-    </div>
-    <div class="card" style="width: 20rem;">
-                
-        <div class="card-body">
-            <h5 class="card-title">Заголовок карточки</h5>
-        </div>
-        <img src="/assets/icon-1.png" class="card-img-top" alt="...">
-        <div class="card-body">
-            <a href="#" class="card-link">Ссылка карточки</a>
-        </div>
-    </div>
-    <div class="card" style="width: 20rem;">
-                
-        <div class="card-body">
-            <h5 class="card-title">Заголовок карточки</h5>
-        </div>
-        <img src="/assets/icon-1.png" class="card-img-top" alt="...">
-        <div class="card-body">
-            <a href="#" class="card-link">Ссылка карточки</a>
-        </div>
-    </div>
-    <div class="card" style="width: 20rem;">
-                
-        <div class="card-body">
-            <h5 class="card-title">Заголовок карточки</h5>
-        </div>
-        <img src="/assets/icon-1.png" class="card-img-top" alt="...">
-        <div class="card-body">
-            <a href="#" class="card-link">Ссылка карточки</a>
-        </div>
-    </div>
-    <div class="card" style="width: 20rem;">
-                
-        <div class="card-body">
-            <h5 class="card-title">Заголовок карточки</h5>
-        </div>
-        <img src="/assets/icon-1.png" class="card-img-top" alt="...">
-        <div class="card-body">
-            <a href="#" class="card-link">Ссылка карточки</a>
-        </div>
-    </div>
-    <div class="card" style="width: 20rem;">
-                
-        <div class="card-body">
-            <h5 class="card-title">Заголовок карточки</h5>
-        </div>
-        <img src="/assets/icon-1.png" class="card-img-top" alt="...">
-        <div class="card-body">
-            <a href="#" class="card-link">Ссылка карточки</a>
-        </div>
-    </div>
-    <div class="card" style="width: 20rem;">
-                
-        <div class="card-body">
-            <h5 class="card-title">Заголовок карточки</h5>
-        </div>
-        <img src="/assets/icon-1.png" class="card-img-top" alt="...">
-        <div class="card-body">
-            <a href="#" class="card-link">Ссылка карточки</a>
-        </div>
-    </div>
+  </div>
 </div>

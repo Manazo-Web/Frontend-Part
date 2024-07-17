@@ -1,0 +1,40 @@
+<div class="container mt-5">
+    <div class="card shadow-sm">
+      <div class="card-header bg-dark text-white">
+        <h1 class="mb-0">Создание товара</h1>
+      </div>
+      <div class="card-body">
+        <form >
+          <div class="mb-3">
+            <label for="productName" class="form-label">Название товара</label>
+            <input type="text" class="form-control" id="productName" [(ngModel)]="productName" name="productName" required>
+          </div>
+          <div class="mb-3">
+            <label for="productCategory" class="form-label">Категория товара</label>
+            <select class="form-select" id="productCategory" [(ngModel)]="productCategory" name="productCategory" required>
+              <option value="" disabled selected>Выберите категорию</option>
+              <option *ngFor="let category of categories" [value]="category">{{ category }}</option>
+            </select>
+          </div>
+          <div class="mb-3">
+            <label for="productDescription" class="form-label">Описание товара</label>
+            <textarea class="form-control" id="productDescription" rows="3" [(ngModel)]="productDescription" name="productDescription" required></textarea>
+          </div>
+          <div class="mb-3">
+            <label for="productPrice" class="form-label">Цена товара</label>
+            <input type="number" class="form-control" id="productPrice" [(ngModel)]="productPrice" name="productPrice" required>
+          </div>
+          <div class="mb-3">
+            <label for="productImages" class="form-label">Добавить фото</label>
+            <input class="form-control" type="file" id="productImages" (change)="onFileChange($event)" multiple accept="image/*">
+          </div>
+          <div class="mb-3" id="imagePreviewContainer">
+            <div *ngFor="let img of imagePreviews" class="img-preview-wrapper">
+              <img [src]="img" class="preview-img" />
+            </div>
+          </div>
+          <button type="submit" class="btn btn-dark w-100">Создать товар</button>
+        </form>
+      </div>
+    </div>
+  </div>

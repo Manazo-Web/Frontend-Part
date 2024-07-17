@@ -1,0 +1,26 @@
+.preview-img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+    margin: 10px 0;
+  }
+  
+  .img-preview-wrapper {
+    display: inline-block;
+    width: 100px;
+    height: 100px;
+    overflow: hidden;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    text-align: center;
+    line-height: 100px;
+  }
+  
+  .img-preview-wrapper img {
+    max-width: 100%;
+    max-height: 100%;
+    vertical-align: middle;
+  }
+  

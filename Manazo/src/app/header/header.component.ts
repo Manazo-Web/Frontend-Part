@@ -24,36 +24,78 @@ export class HeaderComponent {
   RegLogin:string = '';
   RegPassword:string = '';
 
-  LogClick(){
-    console.log(this.LogLogin + " " + this.LogPassword);
+  RegCountry:string = '';
+  RegCity:string = '';
+  RegStreet:string = '';
+  RegZipcode:string = '';
+  
+  RegCreditCard:string = '';
+
+  userClick()
+  {
+    this.router.navigate(['user']);
   }
-RegClick() {
-    const url = 'тут будет ссылка';
+  cartClick(){
+    this.router.navigate(['cart']);
+  }
+  favoritesClick(){
+    this.router.navigate(['favorites']);
+  }
+  LogClick() {
+    // Assuming this.LogLogin and this.LogPassword are your login and password values
+    const login = this.LogLogin;
+    const password = this.LogPassword;
 
-    const data = {
-        RegLogin: this.RegLogin,
-        RegEmail: this.RegEmail,
-        RegName: this.RegName,
-        RegNumber: this.RegNumber,
-        RegPassword: this.RegPassword,
-        RegSurname: this.RegSurname
-    };
+    // Construct the URL with login and password as query parameters
+    const url = `api/user?login=${login}&password=${password}`;
 
+    // Make the fetch request with the GET method
     fetch(url, {
-        method: 'POST',
+        method: 'GET',
         headers: {
             'Content-Type': 'application/json',
+            // Add any additional headers if required
         },
-        body: JSON.stringify(data),
     })
-    .then(response => response.json())
-    .then(responseData => {
-        // Display the response data in the console
-        console.log(responseData);
-    })
-    .catch(error => {
-        console.error('Error:', error);
-    });
+        .then(response => response.json())
+        .then(data => console.log(data))
+        .catch(error => console.error('LogClick:', error));
+}
+RegClick() {
+        const url = 'тут будет ссылка';
+
+        const data = {
+            RegLogin: this.RegLogin,
+            RegEmail: this.RegEmail,
+            RegName: this.RegName,
+            RegNumber: this.RegNumber,
+            RegPassword: this.RegPassword,
+            RegSurname: this.RegSurname,
+    
+            RegCreditCard:this.RegCreditCard,
+    
+            RegCountry: this.RegCountry,
+            RegCity:this.RegCity,
+            RegStreet:this.RegStreet,
+            RegZipcode:this.RegZipcode
+        };
+    
+        fetch(url, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(data),
+        })
+        .then(response => response.json())
+        .then(responseData => {
+            // Display the response data in the console
+            console.log(responseData);
+        })
+        .catch(error => {
+            console.error('Error:', error);
+        });
+    
 }
 
   sendSearchString() {

@@ -1,0 +1,7 @@
+.search-input::placeholder {
+    color: white;
+  }
+
+.border-button{
+  border: 1px solid white;
+}

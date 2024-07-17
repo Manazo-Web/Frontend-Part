@@ -1,0 +1,36 @@
+<div class="container mt-5">
+    <div class="card shadow-sm">
+      <div class="card-header bg-dark text-white text-center">
+        <h1 class="mb-0">Корзина</h1>
+      </div>
+      <div class="card-body">
+        <div *ngIf="cartItems.length > 0; else emptyCart">
+          <div class="row mb-3" *ngFor="let item of cartItems; let i = index">
+            <div class="col-4">
+              <img [src]="item.image" alt="{{ item.name }}" class="img-fluid img-thumbnail">
+            </div>
+            <div class="col-8">
+              <h5>{{ item.name }}</h5>
+              <p>{{ item.description }}</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div>
+                  <button class="btn btn-sm btn-outline-primary" (click)="updateQuantity(i, item.quantity - 1)" [disabled]="item.quantity === 1">-</button>
+                  <span class="mx-2">{{ item.quantity }}</span>
+                  <button class="btn btn-sm btn-outline-primary" (click)="updateQuantity(i, item.quantity + 1)">+</button>
+                </div>
+                <span>{{ item.price * item.quantity | currency:'RUB' }}</span>
+                <button class="btn btn-sm btn-danger" (click)="removeItem(i)">Удалить</button>
+              </div>
+            </div>
+          </div>
+          <div class="d-flex justify-content-between">
+            <h4>Итого: {{ getTotalPrice() | currency:'RUB' }}</h4>
+            <button class="btn btn-dark" (click)="checkout()">Оформить заказ</button>
+          </div>
+        </div>
+        <ng-template #emptyCart>
+          <p class="text-center">Ваша корзина пуста</p>
+        </ng-template>
+      </div>
+    </div>
+  </div>

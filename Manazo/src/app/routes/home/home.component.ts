@@ -6,5 +6,14 @@ import { Component } from '@angular/core';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent {
-
+  cards = [
+    { title: 'Заголовок карточки', img: '/assets/icon-1.png', link: '#' },
+    { title: 'Заголовок карточки', img: '/assets/icon-1.png', link: '#' },
+    { title: 'Заголовок карточки', img: '/assets/icon-1.png', link: '#' },
+    { title: 'Заголовок карточки', img: '/assets/icon-1.png', link: '#' },
+    { title: 'Заголовок карточки', img: '/assets/icon-1.png', link: '#' },
+    { title: 'Заголовок карточки', img: '/assets/icon-1.png', link: '#' },
+    { title: 'Заголовок карточки', img: '/assets/icon-1.png', link: '#' },
+    { title: 'Заголовок карточки', img: '/assets/icon-1.png', link: '#' }
+  ];
 }

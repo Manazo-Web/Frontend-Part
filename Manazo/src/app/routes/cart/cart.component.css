@@ -1,0 +1,12 @@
+.img-thumbnail {
+    max-width: 150px;
+    max-height: 150px;
+  }
+  
+  .card-body {
+    padding: 1.5rem;
+  }
+  
+  .card-header {
+    padding: 1rem;
+  }
